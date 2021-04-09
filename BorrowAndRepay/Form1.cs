@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BorrowAndRepay
@@ -13,6 +6,7 @@ namespace BorrowAndRepay
     public partial class Form1 : Form
     {
         Person i, friend;
+        int myRowB, myRowR;
 
         public Form1()
         {
@@ -25,17 +19,22 @@ namespace BorrowAndRepay
             i = new Person(myNameInput.Text, 0);
             friend = new Person(friendNameInput.Text, 200000);
 
+            
             myNameInput.Enabled = false;
             friendNameInput.Enabled = false;
             submitButton.Enabled = false;
 
-            myBorrowButton.Text = i.Name + "跟" + friend.Name + "借1000$";
-            myRepayBotton.Text = i.Name + "還" + friend.Name + "借1000$";
-            friendBorrowButton.Text = friend.Name + "跟" + i.Name + "借1000$";
-            friendRepayBotton.Text = friend.Name + "還" + i.Name + "借1000$";
 
-            myBorrowButton.Enabled = true;
-            myRepayBotton.Enabled = true;
+            myBorrowNUD.Enabled = true;
+            myRepayNUD.Enabled = true;
+            
+            
+            
+            friendBorrowButton.Text = friend.Name + "跟" + i.Name + "借1000$";
+            friendRepayBotton.Text = friend.Name + "還" + i.Name + "借的1000$";
+
+            
+            
             friendBorrowButton.Enabled = true;
             friendRepayBotton.Enabled = true;
 
@@ -46,19 +45,19 @@ namespace BorrowAndRepay
 
         private void borrowButton_Click(object sender, EventArgs e)
         {
-            i.borrow(friend, 1000);
+            i.borrow(friend, myRowB);
             updateMoney();
         }
 
         private void repayBotton_Click(object sender, EventArgs e)
         {
-            if (i.BorroMoney <= 0)
+            if (i.BorroMoney <= myRowR)
             {
-            MessageBox.Show(i.Name + "我沒有借那麼多錢啊");
+            MessageBox.Show(i.Name + "沒有借那麼多錢啊");
             }
             else
             {
-               i.repay(friend, 1000);
+               i.repay(friend, myRowR);
                 updateMoney();
             }
            
@@ -83,6 +82,23 @@ namespace BorrowAndRepay
             }
 
         }
+
+        private void setMyMoneyNumBottom_Click(object sender, EventArgs e)
+        {
+            myRowB = (int)myBorrowNUD.Value;
+
+            myBorrowButton.Text = i.Name + "跟" + friend.Name + "借" + myRowB + "$";
+            myBorrowButton.Enabled = true;
+        }
+
+        private void SetMyRepayMoneyNumBottom_Click(object sender, EventArgs e)
+        {
+            myRowR = (int)myRepayNUD.Value;
+
+            myRepayBotton.Text = i.Name + "還" + friend.Name + "借的 "+ myRowR + "$";
+            myRepayBotton.Enabled = true;
+        }
+
 
         private void updateMoney()
         {

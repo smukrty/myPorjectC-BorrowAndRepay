@@ -50,6 +50,12 @@ namespace BorrowAndRepay
             this.myBorrowMoneyLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.friendBorrowMoneyLabel = new System.Windows.Forms.Label();
+            this.myBorrowNUD = new System.Windows.Forms.NumericUpDown();
+            this.setMyMoneyNumBottom = new System.Windows.Forms.Button();
+            this.setMyRepayMoneyNumBottom = new System.Windows.Forms.Button();
+            this.myRepayNUD = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.myBorrowNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myRepayNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // submitButton
@@ -179,7 +185,7 @@ namespace BorrowAndRepay
             // myBorrowButton
             // 
             this.myBorrowButton.Enabled = false;
-            this.myBorrowButton.Location = new System.Drawing.Point(30, 219);
+            this.myBorrowButton.Location = new System.Drawing.Point(30, 247);
             this.myBorrowButton.Name = "myBorrowButton";
             this.myBorrowButton.Size = new System.Drawing.Size(147, 36);
             this.myBorrowButton.TabIndex = 13;
@@ -190,7 +196,7 @@ namespace BorrowAndRepay
             // myRepayBotton
             // 
             this.myRepayBotton.Enabled = false;
-            this.myRepayBotton.Location = new System.Drawing.Point(30, 261);
+            this.myRepayBotton.Location = new System.Drawing.Point(30, 321);
             this.myRepayBotton.Name = "myRepayBotton";
             this.myRepayBotton.Size = new System.Drawing.Size(147, 36);
             this.myRepayBotton.TabIndex = 14;
@@ -201,7 +207,7 @@ namespace BorrowAndRepay
             // friendRepayBotton
             // 
             this.friendRepayBotton.Enabled = false;
-            this.friendRepayBotton.Location = new System.Drawing.Point(215, 261);
+            this.friendRepayBotton.Location = new System.Drawing.Point(215, 321);
             this.friendRepayBotton.Name = "friendRepayBotton";
             this.friendRepayBotton.Size = new System.Drawing.Size(147, 36);
             this.friendRepayBotton.TabIndex = 16;
@@ -212,7 +218,7 @@ namespace BorrowAndRepay
             // friendBorrowButton
             // 
             this.friendBorrowButton.Enabled = false;
-            this.friendBorrowButton.Location = new System.Drawing.Point(215, 219);
+            this.friendBorrowButton.Location = new System.Drawing.Point(215, 247);
             this.friendBorrowButton.Name = "friendBorrowButton";
             this.friendBorrowButton.Size = new System.Drawing.Size(147, 36);
             this.friendBorrowButton.TabIndex = 15;
@@ -260,11 +266,81 @@ namespace BorrowAndRepay
             this.friendBorrowMoneyLabel.TabIndex = 20;
             this.friendBorrowMoneyLabel.Text = "0";
             // 
+            // myBorrowNUD
+            // 
+            this.myBorrowNUD.Enabled = false;
+            this.myBorrowNUD.Location = new System.Drawing.Point(30, 219);
+            this.myBorrowNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.myBorrowNUD.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.myBorrowNUD.Name = "myBorrowNUD";
+            this.myBorrowNUD.Size = new System.Drawing.Size(69, 22);
+            this.myBorrowNUD.TabIndex = 21;
+            this.myBorrowNUD.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // setMyMoneyNumBottom
+            // 
+            this.setMyMoneyNumBottom.Location = new System.Drawing.Point(102, 219);
+            this.setMyMoneyNumBottom.Name = "setMyMoneyNumBottom";
+            this.setMyMoneyNumBottom.Size = new System.Drawing.Size(75, 23);
+            this.setMyMoneyNumBottom.TabIndex = 22;
+            this.setMyMoneyNumBottom.Text = "確認";
+            this.setMyMoneyNumBottom.UseVisualStyleBackColor = true;
+            this.setMyMoneyNumBottom.Click += new System.EventHandler(this.setMyMoneyNumBottom_Click);
+            // 
+            // setMyRepayMoneyNumBottom
+            // 
+            this.setMyRepayMoneyNumBottom.Location = new System.Drawing.Point(104, 293);
+            this.setMyRepayMoneyNumBottom.Name = "setMyRepayMoneyNumBottom";
+            this.setMyRepayMoneyNumBottom.Size = new System.Drawing.Size(75, 23);
+            this.setMyRepayMoneyNumBottom.TabIndex = 24;
+            this.setMyRepayMoneyNumBottom.Text = "確認";
+            this.setMyRepayMoneyNumBottom.UseVisualStyleBackColor = true;
+            this.setMyRepayMoneyNumBottom.Click += new System.EventHandler(this.SetMyRepayMoneyNumBottom_Click);
+            // 
+            // myRepayNUD
+            // 
+            this.myRepayNUD.Enabled = false;
+            this.myRepayNUD.Location = new System.Drawing.Point(30, 293);
+            this.myRepayNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.myRepayNUD.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.myRepayNUD.Name = "myRepayNUD";
+            this.myRepayNUD.Size = new System.Drawing.Size(69, 22);
+            this.myRepayNUD.TabIndex = 23;
+            this.myRepayNUD.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 369);
+            this.Controls.Add(this.setMyRepayMoneyNumBottom);
+            this.Controls.Add(this.myRepayNUD);
+            this.Controls.Add(this.setMyMoneyNumBottom);
+            this.Controls.Add(this.myBorrowNUD);
             this.Controls.Add(this.friendBorrowMoneyLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.myBorrowMoneyLabel);
@@ -288,6 +364,8 @@ namespace BorrowAndRepay
             this.Controls.Add(this.submitButton);
             this.Name = "Form1";
             this.Text = "借還錢程式";
+            ((System.ComponentModel.ISupportInitialize)(this.myBorrowNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myRepayNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +394,10 @@ namespace BorrowAndRepay
         private System.Windows.Forms.Label myBorrowMoneyLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label friendBorrowMoneyLabel;
+        private System.Windows.Forms.NumericUpDown myBorrowNUD;
+        private System.Windows.Forms.Button setMyMoneyNumBottom;
+        private System.Windows.Forms.Button setMyRepayMoneyNumBottom;
+        private System.Windows.Forms.NumericUpDown myRepayNUD;
     }
 }
 
