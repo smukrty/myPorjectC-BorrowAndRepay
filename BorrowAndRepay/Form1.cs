@@ -52,8 +52,16 @@ namespace BorrowAndRepay
 
         private void repayBotton_Click(object sender, EventArgs e)
         {
-            i.repay(friend, 1000);
-            updateMoney();
+            if (i.BorroMoney <= 0)
+            {
+            MessageBox.Show(i.Name + "我沒有借那麼多錢啊");
+            }
+            else
+            {
+               i.repay(friend, 1000);
+                updateMoney();
+            }
+           
         }
 
         private void friendBorrowButton_Click(object sender, EventArgs e)
@@ -64,14 +72,26 @@ namespace BorrowAndRepay
 
         private void friendRepayBotton_Click(object sender, EventArgs e)
         {
+            if (friend.BorroMoney <= 0)
+            {
+                MessageBox.Show(friend.Name + "沒有借那麼多錢啊");
+            }
+            else
+            {
             friend.repay(i, 1000);
             updateMoney();
+            }
+
         }
 
         private void updateMoney()
         {
             myMoneyLabel.Text = "" + i.Money;
+            myBorrowMoneyLabel.Text = "" + i.BorroMoney;
             friendMoneyLabel.Text = "" + friend.Money;
+            friendBorrowMoneyLabel.Text = "" + friend.BorroMoney;
         }
+
+
     }
 }

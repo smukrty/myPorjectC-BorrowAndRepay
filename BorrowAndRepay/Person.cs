@@ -10,6 +10,7 @@ namespace BorrowAndRepay
     {
         public String Name;
         public int Money;
+        public int BorroMoney;
 
         public Person(String name, int money)
         {
@@ -24,6 +25,9 @@ namespace BorrowAndRepay
             {
                 lender.Money -= money;
                 this.Money += money;
+                
+                lender.BorroMoney -= money;
+                this.BorroMoney += money;
             }
 
         }
@@ -34,6 +38,9 @@ namespace BorrowAndRepay
             {
                 this.Money -= money;
                 lender.Money += money;
+
+                this.BorroMoney -= money;
+                lender.BorroMoney += money;
             }
           
         }

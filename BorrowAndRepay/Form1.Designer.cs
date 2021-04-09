@@ -46,6 +46,10 @@ namespace BorrowAndRepay
             this.myRepayBotton = new System.Windows.Forms.Button();
             this.friendRepayBotton = new System.Windows.Forms.Button();
             this.friendBorrowButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.myBorrowMoneyLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.friendBorrowMoneyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // submitButton
@@ -175,7 +179,7 @@ namespace BorrowAndRepay
             // myBorrowButton
             // 
             this.myBorrowButton.Enabled = false;
-            this.myBorrowButton.Location = new System.Drawing.Point(30, 188);
+            this.myBorrowButton.Location = new System.Drawing.Point(30, 219);
             this.myBorrowButton.Name = "myBorrowButton";
             this.myBorrowButton.Size = new System.Drawing.Size(147, 36);
             this.myBorrowButton.TabIndex = 13;
@@ -186,7 +190,7 @@ namespace BorrowAndRepay
             // myRepayBotton
             // 
             this.myRepayBotton.Enabled = false;
-            this.myRepayBotton.Location = new System.Drawing.Point(30, 230);
+            this.myRepayBotton.Location = new System.Drawing.Point(30, 261);
             this.myRepayBotton.Name = "myRepayBotton";
             this.myRepayBotton.Size = new System.Drawing.Size(147, 36);
             this.myRepayBotton.TabIndex = 14;
@@ -197,7 +201,7 @@ namespace BorrowAndRepay
             // friendRepayBotton
             // 
             this.friendRepayBotton.Enabled = false;
-            this.friendRepayBotton.Location = new System.Drawing.Point(215, 230);
+            this.friendRepayBotton.Location = new System.Drawing.Point(215, 261);
             this.friendRepayBotton.Name = "friendRepayBotton";
             this.friendRepayBotton.Size = new System.Drawing.Size(147, 36);
             this.friendRepayBotton.TabIndex = 16;
@@ -208,7 +212,7 @@ namespace BorrowAndRepay
             // friendBorrowButton
             // 
             this.friendBorrowButton.Enabled = false;
-            this.friendBorrowButton.Location = new System.Drawing.Point(215, 188);
+            this.friendBorrowButton.Location = new System.Drawing.Point(215, 219);
             this.friendBorrowButton.Name = "friendBorrowButton";
             this.friendBorrowButton.Size = new System.Drawing.Size(147, 36);
             this.friendBorrowButton.TabIndex = 15;
@@ -216,11 +220,55 @@ namespace BorrowAndRepay
             this.friendBorrowButton.UseVisualStyleBackColor = true;
             this.friendBorrowButton.Click += new System.EventHandler(this.friendBorrowButton_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label5.Location = new System.Drawing.Point(27, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "我借了：";
+            // 
+            // myBorrowMoneyLabel
+            // 
+            this.myBorrowMoneyLabel.AutoSize = true;
+            this.myBorrowMoneyLabel.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.myBorrowMoneyLabel.Location = new System.Drawing.Point(121, 182);
+            this.myBorrowMoneyLabel.Name = "myBorrowMoneyLabel";
+            this.myBorrowMoneyLabel.Size = new System.Drawing.Size(16, 16);
+            this.myBorrowMoneyLabel.TabIndex = 18;
+            this.myBorrowMoneyLabel.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.Location = new System.Drawing.Point(212, 182);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 16);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "朋友借了：";
+            // 
+            // friendBorrowMoneyLabel
+            // 
+            this.friendBorrowMoneyLabel.AutoSize = true;
+            this.friendBorrowMoneyLabel.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.friendBorrowMoneyLabel.Location = new System.Drawing.Point(306, 182);
+            this.friendBorrowMoneyLabel.Name = "friendBorrowMoneyLabel";
+            this.friendBorrowMoneyLabel.Size = new System.Drawing.Size(16, 16);
+            this.friendBorrowMoneyLabel.TabIndex = 20;
+            this.friendBorrowMoneyLabel.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 369);
+            this.Controls.Add(this.friendBorrowMoneyLabel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.myBorrowMoneyLabel);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.friendRepayBotton);
             this.Controls.Add(this.friendBorrowButton);
             this.Controls.Add(this.myRepayBotton);
@@ -264,6 +312,10 @@ namespace BorrowAndRepay
         private System.Windows.Forms.Button myRepayBotton;
         private System.Windows.Forms.Button friendRepayBotton;
         private System.Windows.Forms.Button friendBorrowButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label myBorrowMoneyLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label friendBorrowMoneyLabel;
     }
 }
 
